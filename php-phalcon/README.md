@@ -1,5 +1,4 @@
 php-phalcon Cookbook
 ====================
-Install [Phalcon](http://phalconphp.com/).
-
-(If you run this on vagrant you want to increase the memory of your vm)
+- Install [Phalcon](http://phalconphp.com/) PHP Framework as Apache extension
+- Requires: php-devel, pcre-devel, gcc and make are all added to OS packages in OpsWorks
