@@ -8,10 +8,5 @@ version          '0.3.1'
 
 supports "centos"
 supports "rhel"
-
 supports "ubuntu"
 supports "debian"
-
-depends "git"
-depends "build-essential"
-depends "php"
