@@ -1,8 +1,3 @@
-#
-# Cookbook Name:: php-phalcon
-# Recipe:: default
-#
-# Copyright 2014, kinzal
 node['php-phalcon']['packages'].each do |phalcon_package|
   package phalcon_package do
   	action :install
@@ -31,15 +26,6 @@ end
 
 node['php-phalcon']['conf_dirs'].each do |conf_dir|
     template "#{conf_dir}/#{node['php-phalcon']['conf_file']}" do
-        source "phalcon.ini.erb"
-        owner "root"
-        group "root"
-        mode 0644
-    end
-end
-
-node['php-phalcon']['conf_cli_dirs'].each do |conf_cli_dirs|
-    template "#{conf_cli_dirs}/#{node['php-phalcon']['conf_file']}" do
         source "phalcon.ini.erb"
         owner "root"
         group "root"
