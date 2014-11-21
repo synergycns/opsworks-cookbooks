@@ -1,20 +1,32 @@
 default['php-phalcon']['git_url'] = 'git://github.com/phalcon/cphalcon.git'
 default['php-phalcon']['git_ref'] = 'master'
 
-case platform_family
-when "rhel", "fedora"
+package 'php-devel' do
+  package_name value_for_platform(
+    'default' => 'php-devel'
+  )
+  action :install
+end
 
-    default['php-phalcon']['packages'] = ['php-devel', 'pcre-devel', 'gcc', 'make']
-    default['php-phalcon']['conf_dirs'] = ['/etc/php.d']
-    default['php-phalcon']['conf_file'] = 'phalcon.ini'
+package 'pcre-devel' do
+  package_name value_for_platform(
+    'default' => 'pcre-devel'
+  )
+  action :install
+end
 
-when "debian"
+package 'gcc' do
+  package_name value_for_platform(
+    'default' => 'gcc'
+  )
+  action :install
+end
 
-    default['php-phalcon']['packages'] = ['php5-dev', 'libpcre3-dev', 'gcc', 'make', 'php5-mysql']
-    default['php-phalcon']['conf_dirs'] = ['/etc/php5/mods-available']
-    default['php-phalcon']['conf_cli_dirs'] = ['/etc/php5/cli/conf.d']
-    default['php-phalcon']['conf_file'] = '30-phalcon.ini'
-
+package 'make' do
+  package_name value_for_platform(
+    'default' => 'make'
+  )
+  action :install
 end
 
 default['php-phalcon']['devtools'] = true
