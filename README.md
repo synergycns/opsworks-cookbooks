@@ -11,6 +11,15 @@ Available recipes for [AWS OpsWorks Lifecycle Events](http://docs.aws.amazon.com
 * **Setup**: aws-ubuntu::setup; Adds memory swap
 
 
+## Composer
+Install Composer and execute auto installer on deployment folder
+
+## Gluster
+Install Gluster and configure clustered filesystem
+
+## Phalcon
+Install Phalcon PHP extension
+
 ## Wordpress
 
 Configure Wordpress to interact with the MySQL server. It can be used for a fresh install or a restore from a Backup using [BackWPup](http://wordpress.org/plugins/backwpup/).
