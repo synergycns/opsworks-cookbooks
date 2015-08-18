@@ -1,0 +1,3 @@
+[submodule "chef-mongodb_replicaset"]
+	path = chef-mongodb_replicaset
+	url = https://github.com/netinlet/chef-mongodb_replicaset.git
