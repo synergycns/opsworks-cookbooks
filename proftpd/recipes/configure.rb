@@ -18,7 +18,7 @@ package "proftpd" do
 end
 
 user node[:proftpd][:user][:name] do
-  shell "/bin/bash"
+  shell "/sbin/nologin"
 end
 
 script "set_locale" do
