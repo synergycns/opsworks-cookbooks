@@ -9,8 +9,8 @@ instance_elastic_ip = instance[:elastic_ip]
 
 default[:proftpd] = {
   :user => {
-    :name => "proftpd",
-    :password => "proftpd"
+    :name => "CHANGEME",
+    :password => "CHANGEME"
   },
   :group => {
     :name => "ftpgroup"
