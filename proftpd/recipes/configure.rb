@@ -27,7 +27,7 @@ script "set_locale" do
   EOH
 end
 
-template "/etc/proftpd/proftpd.conf" do
+template "/etc/proftpd.conf" do
   source "proftpd.erb"
 end
 
