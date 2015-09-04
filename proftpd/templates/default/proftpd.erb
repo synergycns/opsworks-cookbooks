@@ -1,11 +1,11 @@
 #
-# /etc/proftpd/proftpd.conf -- This is a basic ProFTPD configuration file.
+# /etc/proftpd.conf -- This is a basic ProFTPD configuration file.
 # To really apply changes, reload proftpd after modifications, if
 # it runs in daemon mode. It is not required in inetd/xinetd mode.
 #
 
 # Includes DSO modules
-Include /etc/proftpd/modules.conf
+# Include /etc/proftpd/modules.conf
 
 # Set off to disable IPv6 support which is annoying on IPv4 only boxes.
 UseIPv6                         on
@@ -188,4 +188,4 @@ AdminControlsEngine off
 # </Anonymous>
 
 # Include other custom configuration files
-Include /etc/proftpd/conf.d/
+# Include /etc/proftpd/conf.d/
