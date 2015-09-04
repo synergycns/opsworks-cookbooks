@@ -12,11 +12,6 @@ password  = node[:proftpd][:user][:password]
 
 Chef::Log.debug("Install proftpd and create group and user")
 
-package "proftpd" do
-  action :install
-  options '--force-yes'
-end
-
 user node[:proftpd][:user][:name] do
   shell "/sbin/nologin"
 end
