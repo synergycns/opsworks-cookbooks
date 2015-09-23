@@ -12,9 +12,14 @@ default[:proftpd] = {
     :name => "CHANGEME",
     :password => "CHANGEME"
   },
+  :dbuser => {
+    :name => "CHANGEME",
+    :password => "CHANGEME"
+  },
   :group => {
     :name => "ftpgroup"
   },
+  :dbname => "CHANGEME"
   :folder_path => "/srv/www",
   :passive_ports => "1024 1048",
   :elastic_ip => instance_elastic_ip,
