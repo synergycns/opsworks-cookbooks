@@ -9,11 +9,6 @@
 ftp_user  = node[:proftpd][:user][:name]
 ftp_group = node[:proftpd][:group][:name]
 password  = node[:proftpd][:user][:password]
-hostname  = node[:proftpd][:hostname]
-
-if hostname.nil? || hostname.empty?
-  hostname = node[:proftpd][:elastic_ip]
-end
 
 Chef::Log.debug("Install proftpd and create group and user")
 
