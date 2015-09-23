@@ -1,10 +1,9 @@
 # Default configuration for the AWS OpsWorks cookbook for proftpd
 #
 
-layer               = node[:opsworks][:instance][:layers].first
-instance            = node[:opsworks][:layers].fetch(layer)[:instances].first[1]
+instance            = node[:opsworks][:instance]
 instance_dns_name   = instance[:public_dns_name]
-instance_elastic_ip = instance[:elastic_ip]
+instance_ip         = instance[:ip]
 
 
 default[:proftpd] = {
@@ -23,6 +22,6 @@ default[:proftpd] = {
   :dbhost => "localhost",
   :folder_path => "/srv/www",
   :passive_ports => "1024 1048",
-  :elastic_ip => instance_elastic_ip,
+  :elastic_ip => instance_ip,
   :server_name => instance_dns_name
 }
