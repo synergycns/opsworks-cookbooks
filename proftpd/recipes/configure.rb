@@ -35,6 +35,10 @@ template "/etc/proftpd.sql.conf" do
   source "proftpd.sql.erb"
 end
 
+template "/etc/proftpd.modules.conf" do
+  source "proftpd.modules.erb"
+end
+
 # Restart proftpd
 service "proftpd" do
   action :restart
