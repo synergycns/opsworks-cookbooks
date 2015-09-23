@@ -108,11 +108,11 @@ buckets.each do |bucket|
   bucket_gid  = bucket[:gid]
   
   if bucket_uid.empty?
-    bucket_uid ||= '0'
+    bucket_uid = '0'
   end
   
   if bucket_gid.empty?
-    bucket_gid ||= '0'
+    bucket_gid = '0'
   end
     
   execute "s3fs #{bucket[:name]} /mnt/#{bucket[:name]} -o uid=#{bucket_uid} -o gid=#{bucket_gid} -o allow_other -o use_cache=#{cache_dir}"
