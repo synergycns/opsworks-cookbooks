@@ -7,7 +7,7 @@ SQLAuthenticate         users groups
 
 # used to connect to the database
 # databasename@host database_user user_password
-SQLConnectInfo  mysql_database@localhost mysql_user mysql_password
+SQLConnectInfo  <%= node[:proftpd][:dbname] %>@<%= node[:proftpd][:dbhost] %> <%= node[:proftpd][:dbuser][:name] %> <%= node[:proftpd][:dbuser][:password] %>
 
 
 # Here we tell ProFTPd the names of the database columns in the "usertable"
