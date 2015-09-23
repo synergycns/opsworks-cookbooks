@@ -107,11 +107,11 @@ buckets.each do |bucket|
   bucket_uid  = bucket[:uid]
   bucket_gid  = bucket[:gid]
   
-  if bucket_uid.empty?
+  if bucket_uid.nil? || bucket_uid.empty?
     bucket_uid = '0'
   end
   
-  if bucket_gid.empty?
+  if bucket_gid.nil? || bucket_gid.empty?
     bucket_gid = '0'
   end
     
