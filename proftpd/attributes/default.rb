@@ -18,7 +18,6 @@ default[:proftpd] = {
   },
   :dbname => "CHANGEME",
   :dbhost => "localhost",
-  :folder_path => "/srv/www",
   :passive_ports => "1024 1048",
   :hostname => "CHANGEME",
   :server_name => instance_dns_name
