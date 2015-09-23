@@ -3,8 +3,6 @@
 
 instance            = node[:opsworks][:instance]
 instance_dns_name   = instance[:public_dns_name]
-instance_ip         = instance[:ip]
-
 
 default[:proftpd] = {
   :user => {
@@ -22,6 +20,6 @@ default[:proftpd] = {
   :dbhost => "localhost",
   :folder_path => "/srv/www",
   :passive_ports => "1024 1048",
-  :elastic_ip => instance_ip,
+  :hostname => "CHANGEME",
   :server_name => instance_dns_name
 }
