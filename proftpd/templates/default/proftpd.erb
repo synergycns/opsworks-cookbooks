@@ -11,7 +11,7 @@ Include /etc/proftpd.modules.conf
 UseIPv6                         off
 # If set on you can experience a longer connection delay in many cases.
 IdentLookups                    off
-UseReverseDNS                   off
+UseReverseDNS                   on
 
 ServerName                      "<%= node[:proftpd][:server_name] %>"
 ServerType                      standalone
