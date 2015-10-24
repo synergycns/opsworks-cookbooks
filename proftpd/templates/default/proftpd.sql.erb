@@ -1,7 +1,9 @@
 SQLBackend        mysql
 
 #Passwords in MySQL are encrypted using CRYPT
-SQLAuthTypes            OpenSSL Crypt Backend
+SQLPasswordEngine       on
+SQLAuthTypes            OpenSSL Crypt Backend MD5
+SQLPasswordEncoding     hex
 SQLAuthenticate         users groups
 
 
@@ -12,7 +14,7 @@ SQLConnectInfo  <%= node[:proftpd][:dbname] %>@<%= node[:proftpd][:dbhost] %> <%
 
 # Here we tell ProFTPd the names of the database columns in the "usertable"
 # we want it to interact with. Match the names with those in the db
-SQLUserInfo     ftpuser userid passwd uid gid homedir shell
+SQLUserInfo     puser userid passwd uid gid homedir shell
 
 # Here we tell ProFTPd the names of the database columns in the "grouptable"
 # we want it to interact with. Again the names match with those in the db
@@ -23,10 +25,10 @@ SQLMinID        500
 
 # Update count every time user logs in
 SQLLog PASS updatecount
-SQLNamedQuery updatecount UPDATE "count=count+1, accessed=now() WHERE userid='%u'" ftpuser
+SQLNamedQuery updatecount UPDATE "count=count+1, accessed=now() WHERE userid='%u'" puser
 
 # Update modified everytime user uploads or deletes a file
 SQLLog  STOR,DELE modified
-SQLNamedQuery modified UPDATE "modified=now() WHERE userid='%u'" ftpuser
+SQLNamedQuery modified UPDATE "modified=now() WHERE userid='%u'" user
 
 SqlLogFile /var/log/proftpd/sql.log
