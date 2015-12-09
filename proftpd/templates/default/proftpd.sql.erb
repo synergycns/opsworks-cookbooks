@@ -25,7 +25,7 @@ SQLMinID        500
 
 # Update count every time user logs in
 SQLLog PASS updatecount
-SQLNamedQuery updatecount UPDATE "count=count+1, accessed=now() WHERE userid='%u'" puser
+SQLNamedQuery updatecount UPDATE "count=count+1, accessed=now() WHERE userid='%u'" user
 
 # Update modified everytime user uploads or deletes a file
 SQLLog  STOR,DELE modified
