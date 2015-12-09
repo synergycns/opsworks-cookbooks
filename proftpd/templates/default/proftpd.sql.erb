@@ -14,7 +14,7 @@ SQLConnectInfo  <%= node[:proftpd][:dbname] %>@<%= node[:proftpd][:dbhost] %> <%
 
 # Here we tell ProFTPd the names of the database columns in the "usertable"
 # we want it to interact with. Match the names with those in the db
-SQLUserInfo     puser userid passwd uid gid homedir shell
+SQLUserInfo     user userid passwd uid gid homedir shell
 
 # Here we tell ProFTPd the names of the database columns in the "grouptable"
 # we want it to interact with. Again the names match with those in the db
