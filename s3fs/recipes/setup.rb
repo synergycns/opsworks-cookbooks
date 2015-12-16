@@ -116,7 +116,7 @@ buckets.each do |bucket|
     bucket_gid = '0'
   end
   
-  if bucket_nocache.empty?
+  if bucket_nocache.nil? || bucket_nocache.empty?
     execute "s3fs #{bucket[:name]} /mnt/#{bucket[:name]} -o uid=#{bucket_uid} -o gid=#{bucket_gid} -o allow_other -o use_cache=#{cache_dir}"
   else
     execute "s3fs #{bucket[:name]} /mnt/#{bucket[:name]} -o uid=#{bucket_uid} -o gid=#{bucket_gid} -o allow_other"
