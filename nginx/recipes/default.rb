@@ -67,8 +67,8 @@ template "#{node[:nginx][:dir]}/sites-available/default" do
   mode 0644
 end
 
-link "#{node[:nginx][:dir]}/sites-available/default" do
-  to "#{node[:nginx][:dir]}/sites-enabled/default"
+link "#{node[:nginx][:dir]}/sites-enabled/default" do
+  to "#{node[:nginx][:dir]}/sites-available/default"
 end
 
 include_recipe "nginx::service"
