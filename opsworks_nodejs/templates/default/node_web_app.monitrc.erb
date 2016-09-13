@@ -4,7 +4,7 @@ check host node_web_app_<%= @application_name %> with address 127.0.0.1
   <% if @deploy[:ssl_support] -%>
   if failed port <%= @deploy[:nodejs][:port] %> type TCPSSL protocol HTTP
   <% else -%>
-  if failed port 8080 protocol HTTP
+  if failed port <%= @deploy[:nodejs][:port] %> protocol HTTP
   <% end -%>
     request /
     with timeout 10 seconds
